@@ -1,0 +1,17 @@
+.alert-outlet {
+  top: 10px;
+  margin: 0 auto;
+  position: fixed;
+  z-index: 1000;
+}
+.alert-outlet .alert {
+  left: -10000px;
+  animation: slide 0.2s forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+}
