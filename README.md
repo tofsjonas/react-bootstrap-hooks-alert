@@ -14,12 +14,12 @@ A very basic demo: <https://tofsjonas.github.io/react-bootstrap-hooks-alert-demo
 yarn add react-bootstrap@1.6.1 react-bootstrap-hooks-alert
 ```
 
-
 I don't imagine there will be any problems with newer versions of **react-bootstrap**, but I've been wrong many a time...
 
 ### React Bootstrap's CSS
 
-You *will* need **react-bootstrap**'s CSS as well, but if you are using inside the `<head>`-tag, you should already have it. But just in case, here's an easy way to get it.
+You *will* need **react-bootstrap**'s CSS as well, but if you are using **react-bootstrap**, you should already have it. But just in case, here's an easy way to get it.
+
 
 Include the `<link />` below inside the `<head>`-tag in your `public/index.html`:
 
