@@ -1,9 +1,16 @@
 # README
 
-react-bootstrap-hooks-alert is pretty much what it says.
-Using bootstrap/Alert and hooks I built a simple way to generate: [Bootstrap Alerts](https://react-bootstrap.github.io/components/alerts/). Tada!
+Using [React Bootstrap](https://react-bootstrap.github.io/) ([Alerts](https://react-bootstrap.github.io/components/alerts/)) and [React Hooks](https://reactjs.org/docs/hooks-intro.html) I built a simple way to generate "Alerts"! Tada!
 
-(Personally I think they are more notifications than alerts, but maybe that's just me 🤔)
+(Personally I think they are more like **notifications** than **alerts**, but maybe that's just me 🤔)
+
+## Install
+
+``` bash
+yarn add react-bootstrap@1.6.1 react-bootstrap-hooks-alert
+```
+
+I don't imagine there will be any problems with newer versions of react-bootstrap, but I've been wrong many a time...
 
 ## Why was the package created?
 
@@ -27,12 +34,13 @@ There are only two types of configuration: `timeouts` for AlertProvider and `cla
 
 Please note that the timeouts are in milliseconds...
 
-#### defaults
+#### Defaults
 
-By default there are NO timeouts. The alerts will stay until the user clicks it away.
-What you do is you pass them as a prop to the AlertProvider component. See the example below.
+By default there are NO timeouts. The alerts will stay until the user clicks them away.
 
-#### override
+What you do is you pass `timeouts` as a `prop` to the `AlertProvider` component. See the example below.
+
+#### Overrides
 
 You can override the default in the functions found in useAlert, once again see below for examples.
 
@@ -43,6 +51,9 @@ You can override the default in the functions found in useAlert, once again see 
 AlertProvider should be somewhere top-level, so the alerts don't go away if you change page. The same goes for AlertOutlet
 
 ``` jsx
+import Container from 'react-bootstrap/Container'
+import { HashRouter as Router, Routes } from 'react-router-dom'
+
 import { AlertProvider, AlertOutlet } from 'react-bootstrap-hooks-alert'
 import 'react-bootstrap-hooks-alert/dist/Alert.css'
 
@@ -81,18 +92,19 @@ The available functions are named after the bootstrap Alert variants:
 
 ``` jsx
 import { useAlert } from 'react-bootstrap-hooks-alert'
+import { useNavigate } from 'react-router-dom'
 
 const SomeComponent = () => {
-
   const { success, danger, [info, dark etc...] } = useAlert()
+  const navigate = useNavigate()
 
   const handleClick = () => {
     // If there is a timeout set in AlertProvider,
     // this will disappear in that time, otherwise
-    // it will stay until someone clicks it gone!
+    // it will stay until someone clicks it gone
     success('You have clicked a button!')
 
-    // This will override the default timouts passed to AlertProvider!
+    // This will override the default timouts passed to AlertProvider
     success('You have clicked a button!', { timeout: 2000 })
     navigate('somepagesomewhere')
   }
@@ -109,11 +121,11 @@ const SomeComponent = () => {
 
 ## Customizing
 
-These components will follow the styling from react-bootstrap, so if you make changes there, they will be reflected here.
+These components will follow the styling from **react-bootstrap**, so if you make changes there, they will be reflected here.
 
 ### CSS
 
-The css in Alert.css is just to make the container fixed, and add some animation:
+The css in `Alert.css` is just to make the container fixed, and add some animation:
 
 ``` css
 .alert-outlet {
@@ -135,7 +147,9 @@ The css in Alert.css is just to make the container fixed, and add some animation
 }
 ```
 
-If you wish to alter it, the simplest way would be to **not** `import 'react-bootstrap-hooks-alert/dist/Alert.css'` and create your own css.
+If you wish to alter it, the simplest way would be to **not** `import 'react-bootstrap-hooks-alert/dist/Alert.css'` and instead use your own css.
+
+You can pass `className` as a prop if you wish to change it from "alert-outlet"
 
 ### Custom message
 
@@ -168,6 +182,10 @@ success(
   )
 
 ```
+
+## Thanks
+
+My thanks go out to [Prateek Surana](https://prateeksurana.me/blog/react-library-with-typescript/), whose method I used to build the package.
 
 ## Demos
 

@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-hooks-alert",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple alerts/notifications based on react+react-bootrap",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -19,10 +19,11 @@
   },
   "repository": "https://github.com/tofsjonas/react-bootstrap-hooks-alert",
   "keywords": [
+    "react",
     "react-bootstrap",
     "hooks",
-    "alert",
-    "react"
+    "alerts",
+    "notifications"
   ],
   "author": "Jonas Earendel <jonas@earendel.se>",
   "license": "ISC",
