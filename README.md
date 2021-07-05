@@ -4,13 +4,40 @@ Using [React Bootstrap](https://react-bootstrap.github.io/) ([Alerts](https://re
 
 (Personally I think they are more like **notifications** than **alerts**, but maybe that's just me 🤔)
 
+## Demo
+
+A very basic demo: <https://tofsjonas.github.io/react-bootstrap-hooks-alert-demo/>
+
 ## Install
 
 ``` bash
 yarn add react-bootstrap@1.6.1 react-bootstrap-hooks-alert
 ```
 
-I don't imagine there will be any problems with newer versions of react-bootstrap, but I've been wrong many a time...
+
+I don't imagine there will be any problems with newer versions of **react-bootstrap**, but I've been wrong many a time...
+
+### React Bootstrap's CSS
+
+You *will* need **react-bootstrap**'s CSS as well, but if you are using inside the `<head>`-tag, you should already have it. But just in case, here's an easy way to get it.
+
+Include the `<link />` below inside the `<head>`-tag in your `public/index.html`:
+
+``` html
+<head>
+  ...
+  ...
+    <!-- COPY FROM HERE -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+    crossorigin="anonymous" />
+    <!-- TO HERE -->
+  ...
+  ...
+</head>
+```
 
 ## Why was the package created?
 
@@ -48,7 +75,9 @@ You can override the default in the functions found in useAlert, once again see 
 
 ### AlertProvider/AlertOutlet
 
-AlertProvider should be somewhere top-level, so the alerts don't go away if you change page. The same goes for AlertOutlet
+`AlertProvider` should be somewhere top-level, so the alerts don't go away if you change page.
+
+`AlertOutlet` looks better if it's inside a `react-bootstrap/Container`, but it should also be kind of top-level.
 
 ``` jsx
 import Container from 'react-bootstrap/Container'
@@ -79,7 +108,7 @@ export default App
 
 ### useAlert
 
-The available functions are named after the bootstrap Alert variants:
+The available functions are named after the Bootstrap `Alert` variants:
 
 - primary
 - secondary
@@ -125,7 +154,7 @@ These components will follow the styling from **react-bootstrap**, so if you mak
 
 ### CSS
 
-The css in `Alert.css` is just to make the container fixed, and add some animation:
+The CSS in `Alert.css` is just to make the container fixed, and add some animation:
 
 ``` css
 .alert-outlet {
@@ -186,10 +215,6 @@ success(
 ## Thanks
 
 My thanks go out to [Prateek Surana](https://prateeksurana.me/blog/react-library-with-typescript/), whose method I used to build the package.
-
-## Demos
-
-...coming up...
 
 ## Instructions for contributors
 
