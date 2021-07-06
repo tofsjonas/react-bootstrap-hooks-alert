@@ -18,15 +18,11 @@ I don't imagine there will be any problems with newer versions of **react-bootst
 
 ### React Bootstrap's CSS
 
-You *will* need **react-bootstrap**'s CSS as well, but if you are using **react-bootstrap**, you should already have it. But just in case, here's an easy way to get it.
+You *will* need **Bootstrap**'s CSS as well, but if you are using **react-bootstrap**, you most likely already have it. But just in case you don't, here's an easy way to get it.
 
-
-Include the `<link />` below inside the `<head>`-tag in your `public/index.html`:
+Copy the `<link />` below and paste it inside the `<head>`-tag of your `public/index.html`:
 
 ``` html
-<head>
-  ...
-  ...
     <!-- COPY FROM HERE -->
   <link
     rel="stylesheet"
@@ -34,8 +30,20 @@ Include the `<link />` below inside the `<head>`-tag in your `public/index.html`
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
     crossorigin="anonymous" />
     <!-- TO HERE -->
+```
+
+public/index.html:
+
+``` html
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   ...
   ...
+    <!-- PASTE IT SOMEWHERE HERE -->
+  ...
+  ...
+  <title>React App</title>
 </head>
 ```
 
@@ -90,10 +98,10 @@ function App() {
   return (
     <Router>
       <AlertProvider
-         timeouts={{ warning: 2000, danger: 3000, success: 3000 }}
+         timeouts={{ warning: 2000, danger: 3000, success: 1000 }}
       >
         <Container>
-          <AlertOutlet className="alert-outlet" />
+          <AlertOutlet />
             <Routes>
               ...
               ...
@@ -108,7 +116,7 @@ export default App
 
 ### useAlert
 
-The available functions are named after the Bootstrap `Alert` variants:
+The available functions are named after the **Bootstrap** `Alert` variants:
 
 - primary
 - secondary
@@ -124,7 +132,7 @@ import { useAlert } from 'react-bootstrap-hooks-alert'
 import { useNavigate } from 'react-router-dom'
 
 const SomeComponent = () => {
-  const { success, danger, [info, dark etc...] } = useAlert()
+  const { success, danger, [info, dark, etc...] } = useAlert()
   const navigate = useNavigate()
 
   const handleClick = () => {
@@ -178,22 +186,28 @@ The CSS in `Alert.css` is just to make the container fixed, and add some animati
 
 If you wish to alter it, the simplest way would be to **not** `import 'react-bootstrap-hooks-alert/dist/Alert.css'` and instead use your own css.
 
-You can pass `className` as a prop if you wish to change it from "alert-outlet"
+You can pass `className` as a prop if you wish to change it from "alert-outlet", like so:
+
+``` jsx
+  ...
+  ...
+  <AlertOutlet className="do-be-do" />
+  ...
+  ...
+```
 
 ### Custom message
 
 99% of the time when a user clicks something I just want a text message to appear.
 
-But since I sometimes want more, the parameter passed to the functions is a React.ReactNode.
+But since I sometimes want more, the parameter passed to the functions is a `React.ReactNode`.
 
 So if you want to pass something fancy, this would work, for instance:
 
 ``` jsx
 import Alert from 'react-bootstrap/Alert'
-
 ...
 ...
-
 success(
   <>
   <Alert.Heading>Hey, nice to see you</Alert.Heading>
@@ -215,6 +229,8 @@ success(
 ## Thanks
 
 My thanks go out to [Prateek Surana](https://prateeksurana.me/blog/react-library-with-typescript/), whose method I used to build the package.
+
+Many thanks to [React Bootstrap](https://react-bootstrap.github.io/) and [Bootstrap](https://getbootstrap.com/) also, of course.
 
 ## Instructions for contributors
 
