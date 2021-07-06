@@ -16,7 +16,7 @@ yarn add react-bootstrap@1.6.1 react-bootstrap-hooks-alert
 
 I don't imagine there will be any problems with newer versions of **react-bootstrap**, but I've been wrong many a time...
 
-### React Bootstrap's CSS
+### Bootstrap's CSS
 
 You *will* need **Bootstrap**'s CSS as well, but if you are using **react-bootstrap**, you most likely already have it. But just in case you don't, here's an easy way to get it.
 
@@ -47,45 +47,13 @@ public/index.html:
 </head>
 ```
 
-## Why was the package created?
-
-I couldn't find anything that did quite what I wanted. 🤷‍♂️
-
-When I was done, it felt like it could be a package, and I've never built an npm package before!
-
-## What problem does the package solve?
-
-Not so much a problem, just a way to have pretty Notifications/Alerts.
-
-## How does the package solve the problem?
-
-Wonderfully!
-
-## Configurations
-
-There are only two types of configuration: `timeouts` for AlertProvider and `className` for AlertOutlet, check out the example below.
-
-### Timeouts
-
-Please note that the timeouts are in milliseconds...
-
-#### Defaults
-
-By default there are NO timeouts. The alerts will stay until the user clicks them away.
-
-What you do is you pass `timeouts` as a `prop` to the `AlertProvider` component. See the example below.
-
-#### Overrides
-
-You can override the default in the functions found in useAlert, once again see below for examples.
-
 ## Examples
 
 ### AlertProvider/AlertOutlet
 
 `AlertProvider` should be somewhere top-level, so the alerts don't go away if you change page.
 
-`AlertOutlet` looks better if it's inside a `react-bootstrap/Container`, but it should also be kind of top-level.
+`AlertOutlet` looks better if it's inside a `react-bootstrap/Container`, and it should also be kind of top-level.
 
 ``` jsx
 import Container from 'react-bootstrap/Container'
@@ -156,9 +124,35 @@ const SomeComponent = () => {
 }
 ```
 
+## Configurations
+
+There are only two types of configuration: `timeouts` for AlertProvider and `className` for AlertOutlet. Check out the examples above.
+
+### Timeouts
+
+Please note that the timeouts are in milliseconds...
+
+#### Defaults
+
+By default there are NO timeouts. The alerts will stay until the user clicks them away.
+
+What you do is you pass `timeouts` as a `prop` to the `AlertProvider` component. See the example above.
+
+#### Overrides
+
+You can pass timeout as an option parameter to the functions from `useAlert`. This will take presedence over default values, or lack thereof. Like so:
+
+``` jsx
+  const { success, info } = useAlert()
+  ...
+  ...
+  success('You have clicked a button!', { timeout: 2000 }) // two seconds
+  info('The earth is round! You have been informed.', { timeout: 1500 }) // one point five seconds
+```
+
 ## Customizing
 
-These components will follow the styling from **react-bootstrap**, so if you make changes there, they will be reflected here.
+The `Alerts` will follow the styling from **react-bootstrap**, so if you make changes there, they will be reflected here.
 
 ### CSS
 
@@ -231,6 +225,20 @@ success(
 My thanks go out to [Prateek Surana](https://prateeksurana.me/blog/react-library-with-typescript/), whose method I used to build the package.
 
 Many thanks to [React Bootstrap](https://react-bootstrap.github.io/) and [Bootstrap](https://getbootstrap.com/) also, of course.
+
+## Why was the package created?
+
+I couldn't find anything that did quite what I wanted. 🤷‍♂️
+
+When I was done, it felt like it could be a package, and I've never built an npm package before!
+
+## What problem does the package solve?
+
+Not so much a problem, just a way to have pretty Notifications/Alerts.
+
+## How does the package solve the problem?
+
+Wonderfully!
 
 ## Instructions for contributors
 
