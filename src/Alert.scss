@@ -1,0 +1,26 @@
+.alert-outlet {
+  top: 10px;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  .alert {
+    margin-top: 0;
+    animation: alert-outlet-slide 0.2s forwards;
+    animation-timing-function: ease;
+    left: -10000px;
+    transition: margin-top 1.5s ease-in;
+    &.remove-alert-item {
+      margin-top: -10000px;
+    }
+  }
+}
+
+/*
+Can't use transition, since it is not given a class
+*/
+@keyframes alert-outlet-slide {
+  100% {
+    left: 0;
+  }
+}

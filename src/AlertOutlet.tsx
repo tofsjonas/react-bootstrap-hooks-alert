@@ -12,6 +12,8 @@ type AlertProps = {
 const AlertItem = ({ alert }: AlertProps) => {
   const { dispatch, timeouts } = useContext(AlertContext)
   const [show, setShow] = useState(true)
+  const [class_name, setClassName] = useState('')
+
   const delete_timer = useRef<number>()
   const timeout_timer = useRef<number>()
 
@@ -43,12 +45,13 @@ const AlertItem = ({ alert }: AlertProps) => {
     const timer = delete_timer.current
     window.clearTimeout(timer)
     if (show === false) {
+      setClassName('remove-alert-item') // so transition works
       delete_timer.current = window.setTimeout(() => {
         dispatch({
           type: DELETE_ALERT,
           payload: id,
         })
-      }, 1700)
+      }, 3000)
     }
     return () => {
       window.clearTimeout(timer)
@@ -56,7 +59,7 @@ const AlertItem = ({ alert }: AlertProps) => {
   }, [show, dispatch, id])
 
   return (
-    <Alert variant={type} dismissible={true} show={show} onClose={handleCloseClick}>
+    <Alert className={class_name} variant={type} dismissible={true} onClose={handleCloseClick}>
       {message}
     </Alert>
   )
@@ -66,18 +69,20 @@ type AlertOutletProps = {
   className?: string
 }
 
-const AlertOutlet = ({ className }: AlertOutletProps) => {
+const AlertOutlet = (props: AlertOutletProps) => {
   const { alerts } = useContext(AlertContext)
   return (
-    <Container className={className || 'alert-outlet'}>
-      <Row>
-        <Col>
-          {alerts.map((alert) => (
-            <AlertItem key={alert.id} alert={alert} />
-          ))}
-        </Col>
-      </Row>
-    </Container>
+    <span className={props.className || 'alert-outlet'}>
+      <Container>
+        {alerts.map((alert) => (
+          <Row key={alert.id}>
+            <Col>
+              <AlertItem alert={alert} />
+            </Col>
+          </Row>
+        ))}
+      </Container>
+    </span>
   )
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "react-bootstrap-hooks-alert",
-  "version": "1.0.10",
-  "description": "Simple alerts/notifications based on react+react-bootstrap",
+  "version": "1.0.11",
+  "description": "Simple alerts/notifications built with react+react-bootstrap",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
