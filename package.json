@@ -9,7 +9,7 @@
     "build": "yarn build:esm && yarn build:cjs && yarn copy-files",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "copy-files": "cp src/Alert.css dist",
+    "copy-files": "cp src/*.css dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
@@ -26,7 +26,7 @@
     "notifications"
   ],
   "author": "Jonas Earendel <jonas@earendel.se>",
-  "license": "UNLICENSED",
+  "license": "UNLICENSE",
   "files": [
     "/dist",
     "README.md"
