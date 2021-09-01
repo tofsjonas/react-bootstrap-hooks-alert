@@ -6,7 +6,7 @@ Using [React Bootstrap](https://react-bootstrap.github.io/) ([Alerts](https://re
 
 ## Screenshot
 
-![Screenshot](https://raw.githubusercontent.com/tofsjonas/react-bootstrap-hooks-alert/screenshot.gif)
+![Screenshot](https://raw.githubusercontent.com/tofsjonas/react-bootstrap-hooks-alert/main/screenshot.gif)
 
 ## Demo
 
