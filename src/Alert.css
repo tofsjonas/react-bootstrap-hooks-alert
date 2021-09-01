@@ -7,28 +7,26 @@
 }
 
 .alert-outlet .alert {
-  margin-top: 0;
+  margin-top: -10000px;
   -webkit-animation: alert-outlet-slide 0.2s forwards;
           animation: alert-outlet-slide 0.2s forwards;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   left: -10000px;
-  -webkit-transition: margin-top 1.5s ease-in;
-  transition: margin-top 1.5s ease-in;
+  -webkit-transition: margin-top 1.5s ease-in, opacity 2s linear;
+  transition: margin-top 1.5s ease-in, opacity 2s linear;
 }
 
-.alert-outlet .alert.remove-alert-item {
-  margin-top: -10000px;
+.alert-outlet .alert.show {
+  margin-top: 0;
 }
 
-/*
-Can't use transition, since it is not given a class
-*/
 @-webkit-keyframes alert-outlet-slide {
   100% {
     left: 0;
   }
 }
+
 @keyframes alert-outlet-slide {
   100% {
     left: 0;

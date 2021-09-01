@@ -6,7 +6,7 @@ const uniqueId = () => {
 }
 
 type AlertOptions = {
-  timeout?: number
+  timeout?: number | null
   // dismissible?: boolean ....?
 }
 

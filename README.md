@@ -14,8 +14,20 @@ A very basic demo: <https://tofsjonas.github.io/react-bootstrap-hooks-alert-demo
 
 ## Installation
 
+react-bootstrap@2 is in alpha! (at the time I am writing this) Bootstrap 5! 🥳
+
+### react-bootstrap@2.x.x
+
 ``` bash
-yarn add react-bootstrap@1.6.1 react-bootstrap-hooks-alert
+yarn add react-bootstrap@next react-bootstrap-hooks-alert
+```
+
+(Once react-bootstrap leaves dev, "`@next`" will need to be replaced with something else...)
+
+### react-bootstrap@1.6.1
+
+``` bash
+yarn add react-bootstrap@1.6.1 react-bootstrap-hooks-alert@1.0.12
 ```
 
 ## How to use
@@ -92,8 +104,9 @@ const { success, danger, [info, dark, etc...] } = useAlert()
 If you for some reason wish to override the defaults, or lack thereof, you can set timeouts on this level as well.
 
 ``` jsx
-success('You have clicked a button!', { timeout: 2000 }) // two seconds
-info('The earth is round! You have been informed.', { timeout: 1500 }) // 1.5 seconds
+success('Still alive!', { timeout: 2000 }) // two seconds
+info('The earth is round!', { timeout: 1500 }) // 1.5 seconds
+warning('Fear the reaper!', { timeout: null }) // no timeout
 ```
 
 ## Customizing
@@ -139,17 +152,31 @@ You *will* need **Bootstrap**'s CSS, but if you are using **react-bootstrap**, y
 
 Copy the `<link />` below and paste it inside the `<head>`-tag of your `public/index.html`:
 
+### react-bootstrap@2.x.x
+
 ``` html
-    <!-- COPY FROM HERE -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-    crossorigin="anonymous" />
-    <!-- TO HERE -->
+<!-- COPY FROM HERE -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+  integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+  crossorigin="anonymous" />
+<!-- TO HERE -->
 ```
 
-public/index.html:
+### react-bootstrap@1.6.1
+
+``` bash
+<!-- COPY FROM HERE -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+  crossorigin="anonymous" />
+<!-- TO HERE -->
+```
+
+### public/index.html:
 
 ``` html
 <head>
@@ -161,11 +188,3 @@ public/index.html:
   <title>React App</title>
 </head>
 ```
-
-## Thanks
-
-My thanks go out to [Prateek Surana](https://prateeksurana.me/blog/react-library-with-typescript/), whose method I used to build the package.
-
-Many thanks to [React Bootstrap](https://react-bootstrap.github.io/) and [Bootstrap](https://getbootstrap.com/) as well, of course.
-
-...and Mom. Thanks Mom.

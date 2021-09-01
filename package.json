@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-hooks-alert",
-  "version": "1.0.12",
+  "version": "2.0.0",
   "description": "Simple alerts/notifications built with react+react-bootstrap",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -14,7 +14,7 @@
   },
   "peerDependencies": {
     "react": ">= 16.8.0",
-    "react-bootstrap": "^1.6.x",
+    "react-bootstrap": "^2.x",
     "react-dom": ">= 16.8.0"
   },
   "repository": "https://github.com/tofsjonas/react-bootstrap-hooks-alert",
@@ -43,7 +43,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.24.0",
     "react": "^17.0.2",
-    "react-bootstrap": "^1.6.1",
+    "react-bootstrap": "^2.0.0-beta.6",
     "react-dom": "^17.0.2",
     "typescript": "^4.3.5"
   }

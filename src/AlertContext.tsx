@@ -6,7 +6,7 @@ export type AlertType = {
   id: string
   message: React.ReactNode
   type: string
-  timeout?: number
+  timeout?: number | null
 }
 
 export type AlertTimeouts = {
