@@ -1,7 +1,5 @@
 import React, { createContext, useReducer } from 'react'
-// export const SET_ALERTS = 'SET_ALERTS'
 export const ADD_ALERT = 'ADD_ALERT'
-// export const UPDATE_ALERT = 'UPDATE_ALERT'
 export const DELETE_ALERT = 'DELETE_ALERT'
 
 export type AlertType = {
@@ -27,30 +25,11 @@ type State = {
   alerts: AlertType[]
 }
 
-type Action =
-  | { type: 'ADD_ALERT'; payload: AlertType }
-  // | { type: 'UPDATE_ALERT'; payload: Alert }
-  | { type: 'DELETE_ALERT'; payload: string }
+type Action = { type: 'ADD_ALERT'; payload: AlertType } | { type: 'DELETE_ALERT'; payload: string }
 
 const initialState: State = {
   timeouts: {},
-  alerts: [
-    // {
-    //   id: '1',
-    //   message: 'Success',
-    //   type: 'success',
-    // },
-    // {
-    //   id: '2',
-    //   message: 'Warning',
-    //   type: 'warning',
-    // },
-    // {
-    //   id: '3',
-    //   message: 'Danger',
-    //   type: 'danger',
-    // },
-  ],
+  alerts: [],
 }
 
 const reducer = (state: State, action: Action): State => {
@@ -73,21 +52,13 @@ export const AlertContext = createContext<ContextProps>({
   dispatch: () => null,
 })
 
-// export const AlertContext = React.createContext<Partial<ContextProps>>({})
-
 type ProviderProps = {
   children: React.ReactNode
   timeouts?: AlertTimeouts
 }
 
-// export type Props = {
-//   children: ReactNode;
-//   axiosInstance: AxiosInstance;
-// };
-
 const AlertProvider = ({ children, timeouts }: ProviderProps) => {
   const [state, dispatch] = useReducer(reducer, { ...initialState, timeouts })
-
   return <AlertContext.Provider value={{ ...state, dispatch }}>{children}</AlertContext.Provider>
 }
 export default AlertProvider

@@ -4,6 +4,10 @@ Using [React Bootstrap](https://react-bootstrap.github.io/) ([Alerts](https://re
 
 (Personally I think they are more like **notifications** than **alerts**, but maybe that's just me 🤔 )
 
+## Screenshot
+
+![Screenshot](https://raw.githubusercontent.com/tofsjonas/react-bootstrap-hooks-alert/screenshot.gif)
+
 ## Demo
 
 A very basic demo: <https://tofsjonas.github.io/react-bootstrap-hooks-alert-demo/>
@@ -31,11 +35,14 @@ const App = () => {
 }
 
 const DemoDiv = () => {
-  const { warning } = useAlert()
+  const { warning, info } = useAlert()
   useEffect(() => {
     warning('This is a warning!')
   }, [warning])
-  return <div>Demo</div>
+  const infoClick = () => {
+    info('This is information!')
+  }
+  return <div onClick={infoClick}>Demo</div>
 }
 
 export default App
