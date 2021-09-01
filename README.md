@@ -14,7 +14,7 @@ A very basic demo: <https://tofsjonas.github.io/react-bootstrap-hooks-alert-demo
 
 ## Installation
 
-react-bootstrap@2 is in alpha! (at the time I am writing this) Bootstrap 5! 🥳
+react-bootstrap@2 is in beta! (at the time I am writing this) Bootstrap 5! 🥳
 
 ### react-bootstrap@2.x.x
 
