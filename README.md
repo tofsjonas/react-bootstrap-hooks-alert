@@ -152,7 +152,7 @@ You *will* need **Bootstrap**'s CSS, but if you are using **react-bootstrap**, y
 
 Copy the `<link />` below and paste it inside the `<head>`-tag of your `public/index.html`:
 
-### react-bootstrap@2.x.x
+### react-bootstrap@2.x.x stylesheet
 
 ``` html
 <!-- COPY FROM HERE -->
@@ -164,7 +164,7 @@ Copy the `<link />` below and paste it inside the `<head>`-tag of your `public/i
 <!-- TO HERE -->
 ```
 
-### react-bootstrap@1.6.1
+### react-bootstrap@1.6.1 stylesheet
 
 ``` bash
 <!-- COPY FROM HERE -->
@@ -176,7 +176,7 @@ Copy the `<link />` below and paste it inside the `<head>`-tag of your `public/i
 <!-- TO HERE -->
 ```
 
-### public/index.html:
+### public/index.html
 
 ``` html
 <head>
