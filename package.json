@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-hooks-alert",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple alerts/notifications built with react+react-bootstrap",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -14,7 +14,7 @@
   },
   "peerDependencies": {
     "react": ">= 16.8.0",
-    "react-bootstrap": "^2.x",
+    "react-bootstrap": "^2.x.x",
     "react-dom": ">= 16.8.0"
   },
   "repository": "https://github.com/tofsjonas/react-bootstrap-hooks-alert",
